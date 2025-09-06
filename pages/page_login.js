@@ -40,6 +40,19 @@ class LoginPage {
         await passwordInput.sendKeys(password);
         await button.click();
     }
+    
+    async getErrorMessage() {
+        const errorEl = await this.driver.findElement({ css: 'h3[data-test="error"]' });
+        return await errorEl.getText();
+    }
+
+    async isLoaded() {
+        try {
+            return await this.loginButton.isDisplayed();
+        } catch (err) {
+            return false;
+        }
+    }
 }
 
 module.exports = LoginPage;

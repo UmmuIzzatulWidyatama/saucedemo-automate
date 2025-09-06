@@ -4,9 +4,13 @@
     "description": "Selenium WebDriver tests using Mocha with Mochawesome reports",
     "scripts": {
         "test-login": "mocha tests/test-login.js --recursive --timeout 60000",
-        "test-sort-produk": "mocha tests/test-sort-produk.js --recursive --timeout 60000",
-        "jalanin-mochawesome": "mocha tests --recursive --timeout 60000 --reporter mochawesome",
-        "jalanin-simple-html": "mocha tests --recursive --timeout 60000 --reporter mocha-simple-html-reporter --reporter-options output=report.html"
+        "unit-test-login": "mocha tests/unit-test-login.js --recursive --timeout 60000",
+        "report-unit-test": "mocha tests/unit-test-login.js --recursive --timeout 60000 --reporter mochawesome",
+        "integration-test-login": "mocha tests/integration-test-login.js --recursive --timeout 60000",
+        "report-integration-test": "mocha tests/integration-test-login.js --recursive --timeout 60000 --reporter mochawesome",
+        "system-test-login": "mocha tests/system-test-login.js --recursive --timeout 60000",
+        "report-system-test": "mocha tests/system-test-login.js --recursive --timeout 60000 --reporter mochawesome"
+        
     },
     "dependencies": {
         "pixelmatch": "^7.1.0",
